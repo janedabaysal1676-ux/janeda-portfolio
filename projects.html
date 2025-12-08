@@ -239,20 +239,28 @@
     <!-- VIEW BUTTON -->
     <a class="btn"
        href="https://ytusbp.maps.arcgis.com/apps/dashboards/0acbc4d4450248edb9f585a07cef61fa"
-       target="_blank">
-       View
-    </a>
+       target="_blank"> View Dashboard</a>
 
 </div>
 
+
 <style>
-/* Görseli tamamen düzgün göstermesi için */
-.project-img-full {
+/* Sadece NOAA kartının genişlik layoutunu düzenliyoruz */
+.project-wide {
+    width: 95%;
+    margin: 0 auto 60px auto;
+    max-width: 1400px;
+    padding: 20px 25px;
+}
+
+/* Görsel tam görünmesi için */
+.noaa-img {
     width: 100%;
-    height: 350px;         /* yüksekliği projene göre ayarlayabilirsin */
-    object-fit: cover;     /* görüntüyü kırpmadan orantılı doldurur */
-    border-radius: 10px;
+    height: auto;
+    display: block;
     margin: 15px 0;
+    border-radius: 10px;
+    object-fit: contain;   /* Kırpma yok */
 }
 </style>
 
