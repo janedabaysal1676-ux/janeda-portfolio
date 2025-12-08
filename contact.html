@@ -1,123 +1,135 @@
- <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f6f6f6;
-        color: #222;
-    }
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Janeda Baysal</title>
 
-    nav {
-        background: #111;
-        padding: 12px 0;
-        text-align: center;
-        position: sticky;
-        top: 0;
-        z-index: 999;
-    }
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background: #f6f6f6;
+            color: #222;
+        }
 
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 15px;
-        font-size: 16px;
-        font-weight: 500;
-    }
+        /* Üst Menü */
+        nav {
+            background: #111;
+            padding: 12px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #ffca28;
+        }
 
-    nav a:hover {
-        color: #ffca28;
-    }
+        /* Contact Bölümü Box */
+        .contact-box {
+            width: 70%;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    section {
-        width: 75%;
-        margin: auto;
-        padding: 40px 0;
-    }
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #000;
+        }
 
-    h1, h2, h3 {
-        font-weight: 700;
-        text-align: left;
-        color: #222;
-        margin-bottom: 15px;
-    }
+        p, a {
+            font-size: 18px;
+        }
 
-    h1 {
-        font-size: 32px;
-        text-align: center;
-        margin-top: 20px;
-    }
+        /* Footer Erasmus */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 35px 0;
+            margin-top: 60px;
+        }
 
-    h2 {
-        font-size: 26px;
-        margin-top: 40px;
-    }
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
 
-    p {
-        font-size: 18px;
-        text-align: justify;
-    }
+        .footer-logos img {
+            height: 55px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 6px;
+        }
 
-    ul {
-        font-size: 18px;
-    }
+        .footer-text {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
 
-    /* Projects Section */
-    .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin-top: 20px;
-    }
-
-    .project-item {
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        text-align: center;
-    }
-
-    .project-item img {
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 10px;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .btn {
-        display: inline-block;
-        margin-top: 10px;
-        background: #111;
-        color: #fff;
-        padding: 8px 15px;
-        text-decoration: none;
-        border-radius: 6px;
-        font-size: 14px;
-    }
-
-    .btn:hover {
-        background: #ffca28;
-        color: #000;
-    }
-</style>
+        .footer-copy {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- ÜST MENÜ -->
- <nav>
-  <a href="index.html">Home</a> |
-  <a href="about.html">About</a> |
-  <a href="education.html">Education</a> |
-  <a href="experience.html">Experience</a> |
-  <a href="skills.html">Skills</a> |
-  <a href="projects.html">Projects</a> |
-  <a href="contact.html">Contact</a>
-</nav>
- <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourmail@example.com</p>
-  </section>
+
+    <!-- ÜST MENÜ -->
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="education.html">Education</a> |
+        <a href="experience.html">Experience</a> |
+        <a href="skills.html">Skills</a> |
+        <a href="projects.html">Projects</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- CONTACT İÇERİK -->
+    <div class="contact-box">
+        <h1>Contact Me</h1>
+        <p>You can reach me via:</p>
+
+        <p><strong>Email:</strong> yourmail@example.com</p>      
+        <p><strong>Location:</strong> Salzburg, Austria</p>
+    </div>
+
+    <!-- FOOTER - ERASMUS -->
+    <footer>
+        <div class="footer-logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="EU Flag">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/University_of_Salzburg_logo.png" alt="PLUS">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Universite_Bretagne_Sud_logo_2017.png" alt="UBS">
+        </div>
+
+        <p class="footer-text">
+            Co-funded by the European Union – Erasmus Mundus Joint Master (EMJM)<br>
+            Copernicus Master in Digital Earth
+        </p>
+
+        <p class="footer-copy">
+            © 2025 Janeda Baysal
+        </p>
+    </footer>
+
 </body>
 </html>
+
