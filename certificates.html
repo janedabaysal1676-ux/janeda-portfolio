@@ -33,15 +33,61 @@ nav a:hover {
     color: #ffca28;
 }
 
-section {
-    width: 80%;
+#certificates {
+    width: 90%;
     margin: auto;
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
-h1 {
-    text-align: center;
-    font-size: 34px;
+#certificates h1 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.certificate-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.certificate-card {
+    width: 420px;
+    background: #2d2d2d;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.certificate-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.certificate-content {
+    padding: 22px;
+}
+
+.certificate-content h2 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.certificate-content p {
+    color: #e5e5e5;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.certificate-content a {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.certificate-content a:hover {
+    color: #ffca28;
 }
 </style>
 </head>
@@ -59,9 +105,38 @@ h1 {
   <a href="contact.html">Contact</a>
 </nav>
 
-<section>
+<section id="certificates">
+
     <h1>Certificates</h1>
+
+    <div class="certificate-grid">
+
+        <div class="certificate-card">
+
+            <img src="images/ISSonVIS2026_Baysal_Janeda_page-0001.jpg"
+                 alt="ISSonVIS 2026 Certificate">
+
+            <div class="certificate-content">
+
+                <h2>ISSonVIS 2026</h2>
+
+                <p>
+                    International Spring School on Visualization:
+                    Emotions and Maps – The Affective Dimension of Visualisation.
+                </p>
+
+                <a href="issonvis2026.html">
+                    Read Report
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 </body>
+</html>
 </html>
