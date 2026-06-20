@@ -35,7 +35,6 @@
         color: #ffca28;
     }
 
-    /* DROPDOWN */
     .dropdown {
         display: inline-block;
         position: relative;
@@ -74,7 +73,7 @@
         color: #111;
     }
 
-    .dropdown:hover .dropdown-content {
+    .dropdown-content.open {
         display: block;
     }
 
@@ -171,8 +170,8 @@
   <a href="experience.html">Experience</a> |
   <a href="skills.html">Skills</a> |
   <span class="dropdown">
-    <a href="#">Projects ▾</a>
-    <div class="dropdown-content">
+    <a href="#" onclick="toggleDropdown(event)">Projects ▾</a>
+    <div class="dropdown-content" id="dropdown-menu">
       <a href="#" onclick="showSection('all'); return false;">All Projects</a>
       <a href="#" onclick="showSection('cde'); return false;">CDE Projects</a>
     </div>
@@ -243,9 +242,21 @@
 </section>
 
 <script>
+  function toggleDropdown(e) {
+    e.preventDefault();
+    document.getElementById('dropdown-menu').classList.toggle('open');
+  }
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.getElementById('dropdown-menu').classList.remove('open');
+    }
+  });
+
   function showSection(type) {
     document.getElementById('all-projects').classList.remove('active');
     document.getElementById('cde-projects').classList.remove('active');
+    document.getElementById('dropdown-menu').classList.remove('open');
     if (type === 'all') {
       document.getElementById('all-projects').classList.add('active');
     } else {
