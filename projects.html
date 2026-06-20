@@ -1,4 +1,10 @@
- <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+<style>
     body {
         font-family: Arial, Helvetica, sans-serif;
         line-height: 1.6;
@@ -29,6 +35,49 @@
         color: #ffca28;
     }
 
+    /* DROPDOWN */
+    .dropdown {
+        display: inline-block;
+        position: relative;
+        margin: 0 15px;
+    }
+
+    .dropdown > a {
+        margin: 0;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        min-width: 160px;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 1000;
+        margin-top: 10px;
+    }
+
+    .dropdown-content a {
+        display: block;
+        color: #111;
+        padding: 10px 16px;
+        font-size: 15px;
+        text-align: left;
+        margin: 0;
+    }
+
+    .dropdown-content a:hover {
+        background: #f0f0f0;
+        color: #111;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
     section {
         width: 75%;
         margin: auto;
@@ -42,12 +91,6 @@
         margin-bottom: 15px;
     }
 
-    h1 {
-        font-size: 32px;
-        text-align: center;
-        margin-top: 20px;
-    }
-
     h2 {
         font-size: 26px;
         margin-top: 40px;
@@ -58,272 +101,158 @@
         text-align: justify;
     }
 
-    ul {
-        font-size: 18px;
-    }
-
-    /* Projects Section */
     .project-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin-top: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
     }
 
     .project-item {
         background: #fff;
-        padding: 20px;
-        border-radius: 10px;
+        padding: 25px;
+        border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        text-align: center;
+        text-align: left;
     }
 
-    .project-item img {
+    .project-img, .project-img-full, .project-cover {
         width: 100%;
-        border-radius: 8px;
-        margin-bottom: 10px;
         height: 200px;
         object-fit: cover;
+        border-radius: 8px;
+        margin: 20px 0;
+        display: block;
+    }
+
+    .project-item h3 {
+        text-align: left;
+        margin-bottom: 15px;
+        font-size: 22px;
+        color: #111;
+    }
+
+    .project-item p {
+        text-align: left;
+        font-size: 17px;
+        color: #444;
     }
 
     .btn {
         display: inline-block;
-        margin-top: 10px;
         background: #111;
         color: #fff;
-        padding: 8px 15px;
+        padding: 8px 18px;
         text-decoration: none;
         border-radius: 6px;
-        font-size: 14px;
+        font-size: 15px;
+        margin-top: 10px;
     }
 
     .btn:hover {
         background: #ffca28;
         color: #000;
     }
+
+    .projects-section {
+        display: none;
+    }
+    .projects-section.active {
+        display: block;
+    }
 </style>
 </head>
 <body>
-  <!-- ÜST MENÜ -->
- <nav>
+
+<nav>
   <a href="index.html">Home</a> |
   <a href="about.html">About</a> |
   <a href="education.html">Education</a> |
   <a href="experience.html">Experience</a> |
   <a href="skills.html">Skills</a> |
-  <a href="projects.html">Projects</a> |
-  <a href="certificates.html">Certificates</a> | 
+  <span class="dropdown">
+    <a href="#">Projects ▾</a>
+    <div class="dropdown-content">
+      <a href="#" onclick="showSection('all'); return false;">All Projects</a>
+      <a href="#" onclick="showSection('cde'); return false;">CDE Projects</a>
+    </div>
+  </span>|
+  <a href="certificates.html">Certificates</a> |
   <a href="contact.html">Contact</a>
 </nav>
-  <!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
 
-  <div class="project-grid">
-    <!-- PROJECT 1 -->
-    <div class="project-item">
-      <h3>Global Historical Earthquakes</h3>
-      <p>
-        This map shows all major earthquakes around the world from
-        1900 to now. It marks where and when they happened, and how
-        strong they were.
-      </p>
+<section>
 
-      <!-- PROJECT IMAGE -->
-      <img class="project-img"
-           src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/arcgis.png"
-           alt="Global Earthquake Map">
+  <!-- ALL PROJECTS -->
+  <div id="all-projects" class="projects-section active">
+    <h2>All Projects</h2>
+    <div class="project-grid">
 
-      <!-- VIEW BUTTON -->
-    <a class="btn"
-       href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=2fa9db1f5e3443408d1cf2b24655f912&extent=18.8062,32.6733,51.2598,46.5261"
-       target="_blank"> View Project</a>
+      <div class="project-item">
+        <h3>Global Historical Earthquakes</h3>
+        <p>This map shows all major earthquakes around the world from 1900 to now. It marks where and when they happened, and how strong they were.</p>
+        <img class="project-img" src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/arcgis.png" alt="Global Earthquake Map">
+        <a class="btn" href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=2fa9db1f5e3443408d1cf2b24655f912&extent=18.8062,32.6733,51.2598,46.5261" target="_blank">View Project</a>
+      </div>
 
+      <div class="project-item">
+        <h3>Earthquakes in Turkey</h3>
+        <p>The dashboard provides a snapshot of earthquake trends over time alongside population distribution in affected cities. The visual contrast highlights the region's seismic history.</p>
+        <img class="project-img" src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/dashboard-1.png" alt="Earthquake Dashboard Turkey">
+        <a class="btn" href="https://www.arcgis.com/apps/dashboards/b11f8ac1cac94be597662b38c71e6acd" target="_blank">View Dashboard</a>
+      </div>
+
+      <div class="project-item">
+        <h3>NOAA GNSS stations</h3>
+        <p>NOAA's GNSS stations form a network that continuously tracks satellite signals to monitor Earth's surface movements, sea-level changes, and atmospheric conditions. Their real-time observations support hazard mitigation, mapping, and scientific research.</p>
+        <img class="project-img-full" src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/noa.png" alt="NOAA GNSS Dashboard">
+        <a class="btn" href="https://ytusbp.maps.arcgis.com/apps/dashboards/0acbc4d4450248edb9f585a07cef61fa" target="_blank">View Dashboard</a>
+      </div>
+
+      <div class="project-item">
+        <h3>The Silk Road</h3>
+        <p>The Silk Road, an ancient network of trade routes that connected the East and the West, played a crucial role in shaping global commerce and cultural exchange for centuries. One of its key junctions lay in the territory of modern-day Turkey, whose strategic location at the crossroads of continents made it a vital link in the chain of global trade.</p>
+        <img class="project-img-full" src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/silkroad-1.png" alt="Silk Road Storymap">
+        <a class="btn" href="https://storymaps.arcgis.com/stories/5379eef371ba48f1ae017dd2faf12597" target="_blank">View Storymap</a>
+      </div>
+
+      <div class="project-item">
+        <img src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/image-3.png" alt="Historical Sancak Pavilion" class="project-cover">
+        <h3>Preserving History Through Photogrammetry: The Historical Sancak Pavilion</h3>
+        <p>Graduation thesis project documenting the Historical Sancak Pavilion using aerial and terrestrial photogrammetry and the Structure from Motion (SfM) approach to create detailed 3D models, orthophotos and architectural sections.</p>
+        <p>The project shows how photogrammetry can support cultural heritage preservation and post-earthquake assessment in seismically active regions.</p>
+        <a href="https://janedabaysal.wordpress.com/about/" class="btn" target="_blank">Read Blog</a>
+      </div>
+
+    </div>
   </div>
-    <!-- PROJECT 2 -->
-    <div class="project-item">
-      <h3>Earthquakes in Turkey</h3>
-      <p>
-        The dashboard provides a snapshot of earthquake trends over time
-        alongside population distribution in affected cities. The visual
-        contrast highlights the region’s seismic history.
-      </p>
 
-      <!-- PROJECT IMAGE -->
-      <img class="project-img"
-           src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/dashboard-1.png"
-           alt="Earthquake Dashboard Turkey">
+  <!-- CDE PROJECTS -->
+  <div id="cde-projects" class="projects-section">
+    <h2>CDE Projects</h2>
+    <div class="project-grid">
 
-     <!-- VIEW BUTTON -->
-    <a class="btn"
-       href="https://www.arcgis.com/apps/dashboards/b11f8ac1cac94be597662b38c71e6acd"
-       target="_blank"> View Dashboard</a>
-       </div>
+      <div class="project-item">
+        <h3>Coming Soon</h3>
+        <p>CDE projects will be added here.</p>
+      </div>
+
+    </div>
   </div>
+
 </section>
- 
-<style>
-  /* Projects Section */
-  #projects h1 {
-    text-align: left;
-    margin-bottom: 20px;
-    font-size: 32px;
-    color: #222;
+
+<script>
+  function showSection(type) {
+    document.getElementById('all-projects').classList.remove('active');
+    document.getElementById('cde-projects').classList.remove('active');
+    if (type === 'all') {
+      document.getElementById('all-projects').classList.add('active');
+    } else {
+      document.getElementById('cde-projects').classList.add('active');
+    }
   }
+</script>
 
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-  }
-
-  .project-item {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: left;
-  }
-
-  .project-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 20px 0;
-    display: block;
-  }
-
-  .project-item h3 {
-    text-align: left;
-    margin-bottom: 15px;
-    font-size: 22px;
-    color: #111;
-  }
-
-  .project-item p {
-    text-align: left;
-    font-size: 17px;
-    color: #444;
-  }
-
-  .btn {
-    display: inline-block;
-    background: #111;
-    color: #fff;
-    padding: 8px 18px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 15px;
-    margin-top: 10px;
-  }
-
-  .btn:hover {
-    background: #ffca28;
-    color: #000;
-  }
-</style>
- <!-- PROJECT 3: NOAA GNSS Stations -->
-<div class="project-item">
-    
-    <h3>NOAA GNSS stations</h3>
-    
-    <p>
-        NOAA’s GNSS stations form a network that continuously tracks satellite signals
-        to monitor Earth’s surface movements, sea-level changes, and atmospheric
-        conditions. Their real-time observations support hazard mitigation, mapping,
-        and scientific research.
-    </p>
-
-    <!-- FULL PROJECT IMAGE -->
-    <img class="project-img-full"
-         src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/noa.png"
-         alt="NOAA GNSS Dashboard">
-
-    <!-- VIEW BUTTON -->
-    <a class="btn"
-       href="https://ytusbp.maps.arcgis.com/apps/dashboards/0acbc4d4450248edb9f585a07cef61fa"
-       target="_blank"> View Dashboard</a>
-
-</div>
-
-<!-- PROJECT 4: NOAA GNSS Stations -->
-<div class="project-item">
-    
-    <h3>The Silk Road</h3>
-    
-    <p>
-     The Silk Road, an ancient network of trade routes that connected the East and the West,
-     played a crucial role in shaping global commerce and cultural exchange for centuries.
-     While its name suggests a single pathway, the Silk Road was actually made up of multiple land and
-     sea corridors that spanned vast distances across Asia, the Middle East, and into Europe.
-     One of its key junctions lay in the territory of modern-day Turkey, 
-     whose strategic location at the crossroads of continents made it a vital link in the chain of global trade.
-    </p>
-
-    <!-- FULL PROJECT IMAGE -->
-    <img class="project-img-full"
-         src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/silkroad-1.png"
-         alt="NOAA GNSS Dashboard">
-
-    <!-- VIEW BUTTON -->
-    <a class="btn"
-       href="https://storymaps.arcgis.com/stories/5379eef371ba48f1ae017dd2faf12597"
-       target="_blank"> View stroymap</a>
-
-</div>
-<style>
-/* Sadece NOAA kartının genişlik layoutunu düzenliyoruz */
-.project-wide {
-    width: 95%;
-    margin: 0 auto 60px auto;
-    max-width: 1400px;
-    padding: 20px 25px;
-}
-
-/* Görsel tam görünmesi için */
-.noaa-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px 0;
-    border-radius: 10px;
-    object-fit: contain;   /* Kırpma yok */
-}
-</style>
-
-
-  <!-- PROJECT 5: THESIS / SANCAK PAVILION -->
-<div class="project-item">
-
-  <!-- KAPAK FOTOĞRAFI -->
-  <img 
-    src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/image-3.png"
-    alt="Historical Sancak Pavilion – Photogrammetry Project"
-    class="project-cover"
-  >
-
-  <h3>Preserving History Through Photogrammetry: The Historical Sancak Pavilion</h3>
-
-  <p>
-    Graduation thesis project documenting the Historical Sancak Pavilion using aerial and
-    terrestrial photogrammetry and the Structure from Motion (SfM) approach to create
-    detailed 3D models, orthophotos and architectural sections.
-  </p>
-
-  <p>
-    The project shows how photogrammetry can support cultural heritage preservation and
-    post-earthquake assessment in seismically active regions.
-  </p>
-
-  <a 
-    href="https://janedabaysal.wordpress.com/about/" 
-    class="btn" 
-    target="_blank">
-    Read Blog
-  </a>
-
-</div>
- </div>
-</section>
+</body>
+</html>
