@@ -195,8 +195,8 @@
   <span class="dropdown">
     <a href="#">Projects ▾</a>
     <div class="dropdown-content">
-      <a href="#" onclick="showSection('all'); return false;">All Projects</a>
-      <a href="#" onclick="showSection('cde'); return false;">CDE Projects</a>
+      <a href="projects.html?section=all">All Projects</a>
+      <a href="projects.html?section=cde">CDE Projects</a>
     </div>
   </span>|
   <a href="certificates.html">Certificates</a> |
@@ -206,7 +206,7 @@
 <section>
 
   <!-- ALL PROJECTS -->
-  <div id="all-projects" class="projects-section active">
+  <div id="all-projects" class="projects-section">
     <h2>All Projects</h2>
     <div class="project-grid">
 
@@ -270,15 +270,9 @@
 </section>
 
 <script>
-  function showSection(type) {
-    document.getElementById('all-projects').classList.remove('active');
-    document.getElementById('cde-projects').classList.remove('active');
-    if (type === 'all') {
-      document.getElementById('all-projects').classList.add('active');
-    } else {
-      document.getElementById('cde-projects').classList.add('active');
-    }
-  }
+  const params = new URLSearchParams(window.location.search);
+  const section = params.get('section') || 'all';
+  document.getElementById(section === 'cde' ? 'cde-projects' : 'all-projects').classList.add('active');
 </script>
 
 </body>
