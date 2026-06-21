@@ -42,7 +42,15 @@
     }
 
     .dropdown > a {
-        margin: 0;
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .dropdown > a:hover {
+        color: #ffca28;
     }
 
     .dropdown-content {
@@ -54,9 +62,9 @@
         background: #fff;
         min-width: 160px;
         border-radius: 6px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         z-index: 1000;
-        margin-top: 0;
+        padding-top: 8px;
     }
 
     .dropdown-content a {
@@ -66,6 +74,7 @@
         font-size: 15px;
         text-align: left;
         margin: 0;
+        text-decoration: none;
     }
 
     .dropdown-content a:hover {
@@ -73,11 +82,11 @@
         color: #111;
     }
 
-    .dropdown-content.open {
+    .dropdown:hover .dropdown-content {
         display: block;
     }
 
-    .dropdown:hover .dropdown-content {
+    .dropdown-content.open {
         display: block;
     }
 
@@ -87,33 +96,36 @@
         padding: 40px 0;
     }
 
-    h1, h2, h3 {
+    h2 {
+        font-size: 26px;
         font-weight: 700;
-        text-align: left;
         color: #222;
         margin-bottom: 15px;
     }
 
-    h2 {
-        font-size: 26px;
-        margin-top: 40px;
+    h3 {
+        font-weight: 700;
+        color: #111;
+        font-size: 20px;
+        margin-bottom: 12px;
     }
 
     p {
-        font-size: 18px;
-        text-align: justify;
+        font-size: 16px;
+        color: #444;
+        text-align: left;
     }
 
     .project-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-        gap: 30px;
-        margin-top: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 25px;
     }
 
     .project-item {
         background: #fff;
-        padding: 25px;
+        padding: 22px;
         border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         text-align: left;
@@ -121,24 +133,11 @@
 
     .project-img, .project-img-full, .project-cover {
         width: 100%;
-        height: 200px;
+        height: 190px;
         object-fit: cover;
         border-radius: 8px;
-        margin: 20px 0;
+        margin-bottom: 14px;
         display: block;
-    }
-
-    .project-item h3 {
-        text-align: left;
-        margin-bottom: 15px;
-        font-size: 22px;
-        color: #111;
-    }
-
-    .project-item p {
-        text-align: left;
-        font-size: 17px;
-        color: #444;
     }
 
     .btn {
@@ -148,7 +147,7 @@
         padding: 8px 18px;
         text-decoration: none;
         border-radius: 6px;
-        font-size: 15px;
+        font-size: 14px;
         margin-top: 10px;
     }
 
@@ -160,8 +159,34 @@
     .projects-section {
         display: none;
     }
+
     .projects-section.active {
         display: block;
+    }
+
+    .cde-banner {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                    url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Earth_lights_lrg.jpg/1280px-Earth_lights_lrg.jpg') center/cover no-repeat;
+        padding: 40px 20px;
+        text-align: center;
+        border-radius: 12px;
+        margin-bottom: 30px;
+    }
+
+    .cde-banner h2 {
+        color: #fff;
+        font-size: 32px;
+        letter-spacing: 3px;
+        margin: 0;
+    }
+
+    .cde-subtitle {
+        font-size: 24px;
+        letter-spacing: 2px;
+        font-weight: 300;
+        color: #222;
+        text-align: center;
+        margin-bottom: 25px;
     }
 </style>
 </head>
@@ -206,15 +231,15 @@
       </div>
 
       <div class="project-item">
-        <h3>NOAA GNSS stations</h3>
-        <p>NOAA's GNSS stations form a network that continuously tracks satellite signals to monitor Earth's surface movements, sea-level changes, and atmospheric conditions. Their real-time observations support hazard mitigation, mapping, and scientific research.</p>
+        <h3>NOAA GNSS Stations</h3>
+        <p>NOAA's GNSS stations form a network that continuously tracks satellite signals to monitor Earth's surface movements, sea-level changes, and atmospheric conditions.</p>
         <img class="project-img-full" src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/noa.png" alt="NOAA GNSS Dashboard">
         <a class="btn" href="https://ytusbp.maps.arcgis.com/apps/dashboards/0acbc4d4450248edb9f585a07cef61fa" target="_blank">View Dashboard</a>
       </div>
 
       <div class="project-item">
         <h3>The Silk Road</h3>
-        <p>The Silk Road, an ancient network of trade routes that connected the East and the West, played a crucial role in shaping global commerce and cultural exchange for centuries. One of its key junctions lay in the territory of modern-day Turkey, whose strategic location at the crossroads of continents made it a vital link in the chain of global trade.</p>
+        <p>The Silk Road, an ancient network of trade routes that connected the East and the West, played a crucial role in shaping global commerce and cultural exchange for centuries.</p>
         <img class="project-img-full" src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/silkroad-1.png" alt="Silk Road Storymap">
         <a class="btn" href="https://storymaps.arcgis.com/stories/5379eef371ba48f1ae017dd2faf12597" target="_blank">View Storymap</a>
       </div>
@@ -222,8 +247,7 @@
       <div class="project-item">
         <img src="https://janedabaysal.wordpress.com/wp-content/uploads/2023/12/image-3.png" alt="Historical Sancak Pavilion" class="project-cover">
         <h3>Preserving History Through Photogrammetry: The Historical Sancak Pavilion</h3>
-        <p>Graduation thesis project documenting the Historical Sancak Pavilion using aerial and terrestrial photogrammetry and the Structure from Motion (SfM) approach to create detailed 3D models, orthophotos and architectural sections.</p>
-        <p>The project shows how photogrammetry can support cultural heritage preservation and post-earthquake assessment in seismically active regions.</p>
+        <p>Graduation thesis project documenting the Historical Sancak Pavilion using aerial and terrestrial photogrammetry and the Structure from Motion (SfM) approach.</p>
         <a href="https://janedabaysal.wordpress.com/about/" class="btn" target="_blank">Read Blog</a>
       </div>
 
@@ -233,29 +257,21 @@
   <!-- CDE PROJECTS -->
   <div id="cde-projects" class="projects-section">
 
-    <div style="
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                  url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Earth_lights_lrg.jpg/1280px-Earth_lights_lrg.jpg') center/cover no-repeat;
-      padding: 40px 20px;
-      text-align: center;
-      border-radius: 12px;
-      margin-bottom: 30px;
-    ">
-      <h2 style="color:#fff; font-size:32px; letter-spacing:3px; margin:0;">CDE PROJECTS</h2>
+    <div class="cde-banner">
+      <h2>CDE PROJECTS</h2>
     </div>
 
-    <h2 style="font-size:28px; letter-spacing:2px; font-weight:300; color:#222; text-align:center; margin-bottom:30px;">PROJECTS & ASSIGNMENTS</h2>
+    <p class="cde-subtitle">PROJECTS & ASSIGNMENTS</p>
 
-    <div class="project-item" style="max-width: 350px;">
-  <h3>Copernicus Hubs and Institutions – Excursion Report</h3>
-  <p>
-    A field visit to the Earth Observation Data Centre (EODC) and the 
-    United Nations Office for Outer Space Affairs (UNOOSA) in Vienna. 
-    Explored Copernicus data infrastructure, high-performance computing, 
-    and space technologies for disaster management.
-  </p>
-  <a href="images/copernicus_rapor.pdf" class="btn" target="_blank">Read Report</a>
-</div>
+    <div class="project-grid">
+
+      <div class="project-item">
+        <h3>Copernicus Hubs and Institutions – Excursion Report</h3>
+        <p>A field visit to the Earth Observation Data Centre (EODC) and the United Nations Office for Outer Space Affairs (UNOOSA) in Vienna. Explored Copernicus data infrastructure, high-performance computing, and space technologies for disaster management.</p>
+        <a href="images/copernicus_rapor.pdf" class="btn" target="_blank">Read Report</a>
+      </div>
+
+    </div>
   </div>
 
 </section>
